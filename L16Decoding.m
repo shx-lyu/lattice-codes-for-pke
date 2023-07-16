@@ -22,7 +22,8 @@ vhat = zeros(n, 32);
 % Comparing the coset representatives
 for k = 1:32
     % Decoding for each 2D2 + dk
-    d(1:n, k) = G1 * (de2bi(k - 1, 5)'); % G1 times a binary vector of 5 dimensions
+    %d(1:n, k) = G1 * (de2bi(k - 1, 5)'); % G1 times a binary vector of 5 dimensions
+    d(1:n,k)=(dec2bin_custom(k-1,5)*G1)';
     
     % y = 2D_{16} * x + dk + n;
     ybar = (y - d(1:n, k)) / 2;
